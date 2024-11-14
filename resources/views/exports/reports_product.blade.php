@@ -45,7 +45,7 @@
         @endphp
         @endforeach
         <tr>
-            <td colspan="11">ASSET</td>
+            <td colspan="7">ASSET</td>
             <td class="text-end font-weight-bold">{{ formatPrice($totalSum) }}</td>
         </tr>
     </tbody>
