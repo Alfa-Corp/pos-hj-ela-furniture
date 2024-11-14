@@ -12,9 +12,9 @@
 
                                 <div class="input-group mb-3">
                                     <VueMultiselect
-                                        v-model="barcode"
-                                        label="barcode"
-                                        track-by="barcode"
+                                        v-model="title"
+                                        label="title"
+                                        track-by="title"
                                         :options="products"
                                         @close="searchProduct"
                                         ></VueMultiselect>
@@ -173,7 +173,7 @@
         setup(props) {
 
             //define state
-            const barcode = ref('');
+            const title = ref('');
             const product = ref({});
             const qty = ref(1);
 
@@ -183,8 +183,8 @@
                 //fetch with axios
                 await axios.post('/apps/reseller_transactions/searchProduct', {
 
-                    //send data "barcode"
-                    barcode: barcode.value
+                    //send data "title"
+                    barcode: title.value
 
                 }).then(response => {
                     if(response.data.success) {
@@ -206,8 +206,8 @@
                 //set state "product" to empty object
                 product.value = {};
 
-                //set state "barcode" to empty string
-                barcode.value = '';
+                //set state "title" to empty string
+                title.value = '';
             }
 
             // define state grandTotal
@@ -324,7 +324,7 @@
             }
 
             return {
-                barcode,
+                title,
                 product,
                 searchProduct,
                 clearSearch,
